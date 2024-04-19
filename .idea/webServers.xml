@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="92e60cf1-bc2f-4164-bfcf-0d1bae7da4ab" name="florianmarchive.fr">
+        <fileTransfer rootFolder="/var/www/fmar-consulting" accessType="SFTP" host="florianmarchive.fr" port="4747" sshConfigId="c8d00fbf-4cc8-49c2-ba35-9078647c33e1" sshConfig="florian@florianmarchive.fr:4747 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" isUseRsync="true" isUseSudo="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
