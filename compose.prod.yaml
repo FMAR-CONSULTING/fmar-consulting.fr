@@ -1,0 +1,26 @@
+# Production environment override
+services:
+  php:
+    build:
+      context: .
+      target: frankenphp_prod
+    environment:
+      APP_SECRET: ${APP_SECRET}
+      MERCURE_PUBLISHER_JWT_KEY: ${CADDY_MERCURE_JWT_SECRET}
+      MERCURE_SUBSCRIBER_JWT_KEY: ${CADDY_MERCURE_JWT_SECRET}
+    
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.symfony.rule=Host(`fmar-consulting.fr`)"
+      - "traefik.http.routers.symfony.entrypoints=websecure"
+      - "traefik.http.routers.symfony.tls.certresolver=myresolver"
+      - "traefik.http.services.symfony.loadbalancer.server.port=80"
+    networks:
+      - web  
+        
+
+networks:
+  web:
+    external: true
+        
+        
